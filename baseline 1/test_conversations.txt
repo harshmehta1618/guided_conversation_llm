@@ -1,0 +1,346 @@
+================================================================
+TEST CONVERSATIONS — 30 dialogs for the Ayurvedic Pipeline
+================================================================
+Format:
+  - "You:" lines are what the user types into the pipeline.
+  - "Assistant:" lines are illustrative responses (the actual
+    pipeline will generate its own).
+  - Each conversation ends with "done" to trigger Phase 0 + Phase 2.
+  - User language is deliberately INDIRECT and METAPHORICAL —
+    minimal direct keyword overlap with the synonym lists in
+    problems.json, so the embedding model has to do real semantic
+    work to surface the right condition.
+  - Length is dynamic: some conversations have 2 substantive turns,
+    others have 3 — to mimic real users who give info in different
+    amounts on different occasions.
+================================================================
+
+
+----- Conversation 1 -----
+You: Aging is hitting me like a truck this year. Even the small stuff feels like a workout.
+Assistant: That sounds tough. Could you tell me more?
+You: Mornings especially — once I'm up I have to do this whole shuffle around the house before my body cooperates.
+Assistant: Where do you feel it most?
+You: My legs and lower back. The desk job isn't helping either; the longer I sit the worse the dragging feels.
+Assistant: Anything else troubling you?
+You: done
+Expected: MSK_001 (Joint Pain)
+
+
+----- Conversation 2 -----
+You: Eating used to be the highlight of my day. Not anymore.
+Assistant: What's changed?
+You: There's this awful sour thing that climbs up to my mouth after meals, especially when I've had coffee or anything spicy. I have to prop myself up at night just to keep it down.
+Assistant: Any other concerns?
+You: done
+Expected: GIT_001 (Hyperacidity)
+
+
+----- Conversation 3 -----
+You: I've become "that guy" in meetings. You know the one.
+Assistant: What do you mean?
+You: I keep doing this throat-clearing thing, can't help it. There's something tickling in there constantly.
+Assistant: How long has this been going on?
+You: A month maybe. It's worst at night when I'm trying to sleep — nothing comes up, just this dry hacking that won't quit.
+Assistant: Anything else?
+You: done
+Expected: RES_001 (Chronic Cough)
+
+
+----- Conversation 4 -----
+You: My brain refuses to switch off lately. It's like I'm stuck in fifth gear constantly.
+Assistant: That sounds exhausting. Tell me more.
+You: I worry about everything — meetings I haven't had yet, conversations from years ago, money. My chest gets tight and my pulse runs wild even when I'm just sitting on the couch. Two months and counting.
+Assistant: Any other concerns?
+You: done
+Expected: PSY_001 (Anxiety)
+
+
+----- Conversation 5 -----
+You: I'm scratching myself raw without realizing.
+Assistant: Where exactly?
+You: Mostly forearms, but it migrates. Goes away in one place, pops up somewhere else.
+Assistant: Have you tried anything?
+You: Just lotion. The skin gets warm and tingly, sometimes it stings. Nothing's helping.
+Assistant: Any other concerns?
+You: done
+Expected: DERM_001 (Skin Rashes)
+
+
+----- Conversation 6 -----
+You: I'm a walking corpse at this point. My coworkers asked yesterday if I was okay.
+Assistant: Could you describe what's been happening?
+You: Nights are the issue. I lie down at 11, my brain refuses to shut up, finally drift off around 1 AM, then BAM — wide awake at 3, ceiling-staring till sunrise. Every. Single. Night.
+Assistant: Anything else?
+You: done
+Expected: PSY_002 (Insomnia)
+
+
+----- Conversation 7 -----
+You: I've been increasingly miserable for personal reasons.
+Assistant: What's been happening?
+You: It's a bathroom thing — I just can't seem to go.
+Assistant: How long?
+You: Five days now between visits. When something does happen it's tiny, hard, dry stuff. My belly is bloated like I'm five months pregnant and there's this dragging heaviness all day.
+Assistant: Any other concerns?
+You: done
+Expected: GIT_002 (Constipation)
+
+
+----- Conversation 8 -----
+You: There's a marching band rehearsing inside my skull every afternoon.
+Assistant: Where does the pain feel concentrated?
+You: My temples and behind my eyes. The fluorescent office lights make me want to curl up under my desk. I get nauseous with it sometimes too. Painkillers barely touch it.
+Assistant: Anything else?
+You: done
+Expected: NEU_001 (Headache)
+
+
+----- Conversation 9 -----
+You: I had my first proper checkup in years and the doctor wasn't thrilled.
+Assistant: What did he find?
+You: Numbers were way up. 150 over 95.
+Assistant: Are you noticing any symptoms?
+You: Yeah I get woozy when I stand up fast, and during stressful meetings my chest pounds like a drum. I figured it was just my Type-A nature but apparently not.
+Assistant: Any other concerns?
+You: done
+Expected: CVS_001 (Hypertension)
+
+
+----- Conversation 10 -----
+You: I dread my own wardrobe at this point. Half my clothes don't button anymore.
+Assistant: Could you tell me more?
+You: I've gained around 15 kilos in two years, mostly belly. I eat dinner late, lots of fried takeout, and my afternoons are a write-off — heavy, sluggish, just want to crash. Energy is at zero.
+Assistant: Anything else?
+You: done
+Expected: MET_001 (Obesity)
+
+
+----- Conversation 11 -----
+You: My bathroom looks like a small animal molted in there.
+Assistant: How do you mean?
+You: Hair everywhere — in the drain, on my pillow, on my shirt.
+Assistant: How long has this been happening?
+You: Maybe four months. The crown of my head is getting noticeably thinner, and the scalp itches and flakes. I'm stressed just thinking about it.
+Assistant: Any other concerns?
+You: done
+Expected: DERM_002 (Hair Fall)
+
+
+----- Conversation 12 -----
+You: I'm running on something less than fumes. The tank's been empty for months.
+Assistant: Could you describe it?
+You: Nine hours of sleep, still wake up exhausted. Climbing stairs feels like hiking a mountain. I haven't felt motivated to do anything in ages — even the things I used to love. My body has zero juice.
+Assistant: Anything else?
+You: done
+Expected: GEN_001 (Chronic Fatigue)
+
+
+----- Conversation 13 -----
+You: Something's off in my upper belly. Hard to put into words.
+Assistant: Take your time — could you describe it?
+You: It's like there's a small fire eating away at me from the inside.
+Assistant: When is it worst?
+You: When I haven't eaten for a few hours, or after anything spicy. I've also stopped feeling hungry — appetite is gone, and I get queasy after meals.
+Assistant: Any other concerns?
+You: done
+Expected: GIT_003 (Gastritis)
+
+
+----- Conversation 14 -----
+You: I should never have trusted that street vendor last night. I'm paying the price.
+Assistant: What's been happening?
+You: It's been the worst 12 hours of my life. Both ends are betraying me, full-body cramps, completely drained. Can't even keep down sips of water. My stomach feels invaded.
+Assistant: Any other concerns?
+You: done
+Expected: GIT_004 (Gastroenteritis)
+
+
+----- Conversation 15 -----
+You: There's something I find embarrassing to talk about but I have to.
+Assistant: Of course — take your time.
+You: After I use the bathroom I'm seeing red. Bright red, only on the tissue.
+Assistant: Is there any pain?
+You: Yes — it feels like something is splitting open down there when I go. There's also a small lump I can feel near the opening, and it itches afterward.
+Assistant: Any other concerns?
+You: done
+Expected: GIT_005 (Hemorrhoids)
+
+
+----- Conversation 16 -----
+You: I keep waking up at the same time every night with a horrible burning thing in my belly.
+Assistant: What time, and does eating change it?
+You: Like 2 or 3 AM, every night. Eating helps for a bit but the pain comes roaring back an hour later. The thing freaking me out is my stool was almost black yesterday — I had to look twice. I've been losing weight too.
+Assistant: Any other concerns?
+You: done
+Expected: GIT_006 (Peptic Ulcer)
+
+
+----- Conversation 17 -----
+You: I have a complicated relationship with my own digestive system right now.
+Assistant: What do you mean?
+You: It's unpredictable. I never know what kind of day it'll be — totally blocked or running every two hours.
+Assistant: Have you noticed triggers?
+You: Stress, 100%. When work gets busy my gut goes into knots. There's pain right before each rush to the bathroom and it eases up after. Loads of bloating and gas in between.
+Assistant: Any other concerns?
+You: done
+Expected: GIT_007 (Irritable Bowel Syndrome)
+
+
+----- Conversation 18 -----
+You: I've cancelled all my plans today. I literally can't leave the toilet.
+Assistant: When did this start?
+You: This morning. Six trips already, all watery, urgent, no warning. Cramping comes and goes and I'm shaky from going so much. No fever, nothing in the stool, just water.
+Assistant: Any other concerns?
+You: done
+Expected: GIT_008 (Diarrhea)
+
+
+----- Conversation 19 -----
+You: Lunch has become my enemy.
+Assistant: Could you tell me more?
+You: After every meal — especially the midday one — I feel like I swallowed a balloon.
+Assistant: Any other symptoms with it?
+You: Burping nonstop, gas escaping at terrible times, stomach gurgling loudly during meetings. I have to stop eating halfway because I can't take in any more, and then I just want to lie down.
+Assistant: Any other concerns?
+You: done
+Expected: GIT_009 (Indigestion and Bloating)
+
+
+----- Conversation 20 -----
+You: Woke up wrong this morning. Just the smell of breakfast made me gag.
+Assistant: Has it gotten worse?
+You: I've been to the bathroom twice already to throw up. Sips of water set me off again. I'm a bit dizzy too — the room won't quite hold still. Stomach is in an uneasy churn.
+Assistant: Any other concerns?
+You: done
+Expected: GIT_010 (Nausea and Vomiting)
+
+
+----- Conversation 21 -----
+You: Whatever bug is making the rounds in our office decided I was its next target.
+Assistant: How are you feeling?
+You: Like a wreck. Tissues piling up, sneezing nonstop.
+Assistant: Any other symptoms?
+You: My throat is raw, my body feels like it's been hit by a truck, slight fever I think, and my head feels stuffed with cotton. Can't focus on anything.
+Assistant: Any other concerns?
+You: done
+Expected: RES_002 (Common Cold and Flu)
+
+
+----- Conversation 22 -----
+You: My nights have been a special kind of hell lately.
+Assistant: What's happening?
+You: My knees decide to throw a tantrum around 2 AM and wake me up.
+Assistant: And then?
+You: Once I'm up the joints feel locked, I can't get comfortable, and my brain starts spiraling — just lying there with thoughts racing till the alarm. So I'm exhausted AND hurting.
+Assistant: Any other concerns?
+You: done
+Expected: MSK_001 (Joint Pain) + PSY_002 (Insomnia)
+
+
+----- Conversation 23 -----
+You: I'm not in a good headspace and my body knows it.
+Assistant: Could you tell me more?
+You: My mind churns constantly — work I haven't done, conversations I'll never have, what-ifs about everything. My pulse runs ahead of me even sitting still. At night I lie awake for hours, finally pass out at 2, wake at 5. Daytimes I feel jittery and on edge.
+Assistant: Any other concerns?
+You: done
+Expected: PSY_001 (Anxiety) + PSY_002 (Insomnia)
+
+
+----- Conversation 24 -----
+You: My chest and stomach have entered some kind of evil partnership.
+Assistant: What do you mean?
+You: After dinner this hot sour thing surges up to my throat — sometimes I have to sleep half-sitting.
+Assistant: Anything else with it?
+You: My empty stomach in the mornings has this raw gnawing feel, like something is chewing on the lining. Been going on for months and it's getting worse.
+Assistant: Any other concerns?
+You: done
+Expected: GIT_001 (Hyperacidity) / GIT_003 (Gastritis)
+
+
+----- Conversation 25 -----
+You: I genuinely cannot trust my own body anymore.
+Assistant: How is it behaving?
+You: Some weeks completely blocked, other weeks like today — I've been to the bathroom four times in three hours, all watery. The trigger is always work stress, my gut basically panics with me. Cramps come right before each trip, lots of bloating and gas in between.
+Assistant: Any other concerns?
+You: done
+Expected: GIT_007 (IBS) + GIT_008 (Diarrhea)
+
+
+----- Conversation 26 -----
+You: Two things have been ganging up on me this past month.
+Assistant: Tell me more.
+You: One is these crushing headaches at the back of my head, with pressure right behind my eyes.
+Assistant: And the other?
+You: My BP has been creeping up — clinic said borderline last visit. When I stand up too fast everything spins for a second and I have to grab something. The headaches and dizziness might be related, I don't know.
+Assistant: Any other concerns?
+You: done
+Expected: NEU_001 (Headache) + CVS_001 (Hypertension)
+
+
+----- Conversation 27 -----
+You: I'm losing it — and I mean that in two senses, literally.
+Assistant: What do you mean?
+You: After a brutal project deadline last month I've been a nervous wreck — sleeping badly, mind running constant laps. And my hair started coming out in handfuls. The bathroom counter has more hair on it than my actual head some days. The scalp itches and flakes too.
+Assistant: Any other concerns?
+You: done
+Expected: DERM_002 (Hair Fall) + PSY_001 (Anxiety)
+
+
+----- Conversation 28 -----
+You: My body has completely rewritten itself in the last two years.
+Assistant: How so?
+You: Up about 15 kilos, mostly belly. Old clothes are a museum exhibit at this point.
+Assistant: Anything else changed?
+You: Eating is now a chore — after lunch I feel like an over-stuffed turkey, bloated, burping, and just want to nap. I drag through the afternoons. My energy is gone.
+Assistant: Any other concerns?
+You: done
+Expected: MET_001 (Obesity) + GIT_009 (Indigestion and Bloating)
+
+
+----- Conversation 29 -----
+You: This bug has overstayed its welcome and brought a friend.
+Assistant: How long has it been?
+You: Three days of nonstop runny nose, body aches, low fever — and yesterday a chest cough joined the party. Wet cough, greenish phlegm, chest feels packed solid, head is heavy. I'm a mess.
+Assistant: Any other concerns?
+You: done
+Expected: RES_002 (Common Cold) + RES_001 (Chronic Cough)
+
+
+----- Conversation 30 -----
+You: I had a feeling that chicken last night was off.
+Assistant: What's been happening?
+You: I was right — paying for it badly today.
+Assistant: Could you tell me more?
+You: Cramps and running stomach started at sunrise — five trips so far. Now I'm bringing up bile and water won't stay down. My whole body is in revolt and I'm completely wiped out.
+Assistant: Any other concerns?
+You: done
+Expected: GIT_004 (Gastroenteritis) + GIT_008 (Diarrhea) + GIT_010 (Nausea and Vomiting)
+
+
+================================================================
+COVERAGE & DESIGN NOTES
+================================================================
+All 21 problems covered:
+  Single-problem (indirect phrasing):           Conversations  1-21
+  Multi-symptom / cross-cutting (indirect):     Conversations 22-30
+
+Length distribution (substantive user turns, excluding 'done'):
+  3 turns (longer):  conv 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21,
+                     22, 24, 26, 28, 30   → 16 conversations
+  2 turns (shorter): conv 2, 4, 6, 8, 10, 12, 14, 16, 18, 20,
+                     23, 25, 27, 29       → 14 conversations
+
+What makes these tough for embedding-based search:
+  - Metaphor-first openers ("walking corpse", "marching band in
+    my skull", "small fire eating from the inside")
+  - Symptoms revealed through their *consequences* rather than
+    their medical names ("can't button my clothes", "wardrobe
+    looks like a museum")
+  - Information dribbled across multiple turns instead of given
+    upfront, mimicking real user behavior
+  - Relevant medical detail (e.g. "150 over 95", "stool was almost
+    black") embedded inside emotional / contextual narrative
+  - Cross-cutting cases (22-30) deliberately blur the boundary
+    between two or more conditions
+================================================================

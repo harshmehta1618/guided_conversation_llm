@@ -1,0 +1,652 @@
+{
+  "problems_db_version": "2.0",
+  "description": "Mapping of medical problems to Indian Knowledge Systems (IKS) and required user attributes. Synonyms are written in natural conversational phrasing to support semantic-similarity retrieval.",
+  "problems": [
+    {
+      "id": "MSK_001",
+      "primary_term": "Joint Pain",
+      "iks_term": "Sandhivata / Amavata",
+      "category": "Musculoskeletal",
+      "description": "Pain, stiffness, swelling, or restricted movement in joints such as knees, lower back, neck, or shoulders. Often worse in cold weather or in the morning.",
+      "synonyms": [
+        "my knees hurt",
+        "knee pain",
+        "joint pain",
+        "stiff joints in the morning",
+        "arthritis",
+        "aching bones and joints",
+        "back pain",
+        "lower back is sore",
+        "frozen shoulder",
+        "joints feel swollen",
+        "cracking sound in knees"
+      ],
+      "severity_levels": ["Mild Discomfort", "Restricted Movement", "Immobile"],
+      "relevant_attribute_paths": [
+        "musculoskeletal_system.pain_sites",
+        "musculoskeletal_system.pain_quality",
+        "musculoskeletal_system.stiffness",
+        "musculoskeletal_system.inflammation",
+        "musculoskeletal_system.crepitus",
+        "digestive_system.agni_state",
+        "ayurvedic_constitution.vikriti",
+        "vital_signs.body_temperature"
+      ],
+      "exploitation_rules": {
+        "check_digestive_toxins": "If 'digestive_system.agni_state' is 'Manda' (Low), suspect Amavata (Rheumatoid).",
+        "check_vata_aggravation": "If 'pain_quality' is 'Throbbing' or 'Moving', suspect Vata imbalance."
+      }
+    },
+    {
+      "id": "GIT_001",
+      "primary_term": "Hyperacidity",
+      "iks_term": "Amlapitta",
+      "category": "Digestive System",
+      "description": "Burning sensation in the chest or stomach, sour belching, acid reflux, or heartburn — typically aggravated by spicy/sour food, stress, or skipping meals.",
+      "synonyms": [
+        "acid reflux",
+        "heartburn",
+        "burning in the chest after eating",
+        "gerd",
+        "sour belching",
+        "stomach feels acidic",
+        "I get acidity often",
+        "burning sensation in the throat",
+        "chest burns when I lie down"
+      ],
+      "relevant_attribute_paths": [
+        "digestive_system.specific_symptoms",
+        "digestive_system.bowel_movements",
+        "digestive_system.agni_state",
+        "lifestyle_factors.diet_type",
+        "lifestyle_factors.addictions",
+        "mental_emotional_health.stress_level",
+        "ayurvedic_constitution.prakriti"
+      ],
+      "exploitation_rules": {
+        "check_pitta_triggers": "Check 'diet_type' for spicy/sour foods.",
+        "check_mental_stress": "High 'stress_level' often exacerbates Amlapitta."
+      }
+    },
+    {
+      "id": "RES_001",
+      "primary_term": "Chronic Cough",
+      "iks_term": "Kasa",
+      "category": "Respiratory",
+      "description": "Persistent cough lasting more than two weeks — may be dry, productive (with phlegm), or accompanied by chest tightness, sore throat, or congestion.",
+      "synonyms": [
+        "dry cough",
+        "wet cough with phlegm",
+        "I keep coughing",
+        "chest congestion",
+        "bronchitis",
+        "sore throat with cough",
+        "tickling cough at night",
+        "mucus in the chest",
+        "cough that won't go away"
+      ],
+      "relevant_attribute_paths": [
+        "respiratory_system.cough_characteristics",
+        "respiratory_system.sputum_type",
+        "respiratory_system.breathing_pattern",
+        "respiratory_system.specific_symptoms",
+        "vital_signs.body_temperature",
+        "lifestyle_factors.exposure",
+        "ayurvedic_constitution.vikriti"
+      ],
+      "exploitation_rules": {
+        "differentiate_type": "If 'sputum_type' is 'Yellow/Green', suspect Pitta Kasa (Infection). If 'Dry', suspect Vata Kasa."
+      }
+    },
+    {
+      "id": "PSY_001",
+      "primary_term": "Anxiety",
+      "iks_term": "Chittodvega",
+      "category": "Mental Health",
+      "description": "Persistent worry, restlessness, racing thoughts, or panic — often accompanied by rapid pulse, shallow breathing, or digestive disturbance.",
+      "synonyms": [
+        "I feel anxious",
+        "constant worry",
+        "panic attacks",
+        "nervousness",
+        "restlessness",
+        "overthinking",
+        "racing thoughts",
+        "I can't calm my mind",
+        "feeling on edge",
+        "heart races without reason"
+      ],
+      "relevant_attribute_paths": [
+        "mental_emotional_health.emotional_dominance",
+        "mental_emotional_health.stress_level",
+        "mental_emotional_health.sleep_quality",
+        "vital_signs.pulse_rate",
+        "vital_signs.blood_pressure",
+        "digestive_system.bowel_movements",
+        "ayurvedic_constitution.gunas"
+      ],
+      "exploitation_rules": {
+        "gut_brain_axis": "Check 'bowel_movements' for Constipation (Vibandha), a common co-morbidity with Anxiety (Vata)."
+      }
+    },
+    {
+      "id": "DERM_001",
+      "primary_term": "Skin Rashes",
+      "iks_term": "Kushtha / Visarpa",
+      "category": "Dermatology",
+      "description": "Skin reactions including itching, redness, hives, eczema, or acne — often linked to diet incompatibilities, heat, or blood toxicity.",
+      "synonyms": [
+        "itchy skin",
+        "skin rash",
+        "redness on the skin",
+        "hives",
+        "eczema",
+        "acne breakouts",
+        "skin is irritated",
+        "burning sensation on the skin",
+        "patches on my skin"
+      ],
+      "relevant_attribute_paths": [
+        "skin_and_hair.skin_type",
+        "skin_and_hair.specific_issues",
+        "digestive_system.bowel_movements",
+        "lifestyle_factors.diet_type",
+        "vital_signs.body_temperature"
+      ],
+      "exploitation_rules": {
+        "blood_purification": "Check 'diet_type' for incompatible foods (Viruddha Ahara) that vitiate Rakta (Blood)."
+      }
+    },
+    {
+      "id": "PSY_002",
+      "primary_term": "Insomnia",
+      "iks_term": "Anidra",
+      "category": "Mental Health",
+      "description": "Difficulty falling asleep, staying asleep, or waking up unrefreshed. Often linked to stress, irregular routine, or Vata aggravation.",
+      "synonyms": [
+        "I can't sleep at night",
+        "trouble falling asleep",
+        "I keep waking up at night",
+        "insomnia",
+        "sleepless nights",
+        "I lie awake for hours",
+        "poor sleep quality",
+        "wake up tired",
+        "disturbed sleep",
+        "mind keeps running at bedtime"
+      ],
+      "relevant_attribute_paths": [
+        "mental_emotional_health.sleep_quality",
+        "mental_emotional_health.stress_level",
+        "mental_emotional_health.emotional_dominance",
+        "ayurvedic_constitution.gunas",
+        "ayurvedic_constitution.vikriti",
+        "lifestyle_factors.activity_level"
+      ],
+      "exploitation_rules": {
+        "vata_pacification": "If user reports racing thoughts or restlessness with sleeplessness, treat as Vata-driven Anidra.",
+        "stress_link": "Cross-check with stress_level — high stress is the most common driver."
+      }
+    },
+    {
+      "id": "GIT_002",
+      "primary_term": "Constipation",
+      "iks_term": "Vibandha",
+      "category": "Digestive System",
+      "description": "Infrequent, hard, or incomplete bowel movements with bloating or abdominal discomfort — a hallmark of Vata aggravation in the colon.",
+      "synonyms": [
+        "constipation",
+        "I can't pass stool",
+        "hard stools",
+        "irregular bowel movements",
+        "bloated stomach",
+        "haven't gone to the toilet in days",
+        "incomplete evacuation",
+        "stomach feels heavy and stuck",
+        "abdominal discomfort"
+      ],
+      "relevant_attribute_paths": [
+        "digestive_system.bowel_movements",
+        "digestive_system.agni_state",
+        "digestive_system.specific_symptoms",
+        "lifestyle_factors.diet_type",
+        "lifestyle_factors.activity_level",
+        "ayurvedic_constitution.vikriti"
+      ],
+      "exploitation_rules": {
+        "vata_in_colon": "Constipation with dryness/gas indicates Vata in Pakvashaya — recommend warm fluids and oleation."
+      }
+    },
+    {
+      "id": "NEU_001",
+      "primary_term": "Headache",
+      "iks_term": "Shirashoola",
+      "category": "Neurological",
+      "description": "Pain in the head — may be throbbing (Pitta), heavy/dull (Kapha), or sharp/migrating (Vata). Often triggered by stress, hunger, sun exposure, or sinus congestion.",
+      "synonyms": [
+        "headache",
+        "my head hurts",
+        "throbbing pain in temples",
+        "migraine",
+        "tension headache",
+        "head feels heavy",
+        "splitting headache",
+        "pressure behind the eyes",
+        "dull pain in the back of my head"
+      ],
+      "relevant_attribute_paths": [
+        "vital_signs.blood_pressure",
+        "vital_signs.body_temperature",
+        "mental_emotional_health.stress_level",
+        "mental_emotional_health.sleep_quality",
+        "digestive_system.agni_state",
+        "respiratory_system.specific_symptoms",
+        "ayurvedic_constitution.vikriti"
+      ],
+      "exploitation_rules": {
+        "differentiate_dosha": "Throbbing/burning = Pitta; heavy/dull with congestion = Kapha; migrating/sharp = Vata.",
+        "check_digestion": "Many headaches stem from Ama (toxins) — verify agni_state."
+      }
+    },
+    {
+      "id": "CVS_001",
+      "primary_term": "Hypertension",
+      "iks_term": "Rakta Gata Vata",
+      "category": "Cardiovascular",
+      "description": "Elevated blood pressure that may present with headaches, dizziness, palpitations, or simply be detected on measurement. Often tied to stress, salt, and Pitta-Vata aggravation.",
+      "synonyms": [
+        "high blood pressure",
+        "hypertension",
+        "BP is high",
+        "feeling dizzy with high pressure",
+        "palpitations",
+        "heart pounding",
+        "doctor said my BP is up",
+        "pressure keeps rising"
+      ],
+      "relevant_attribute_paths": [
+        "vital_signs.blood_pressure",
+        "vital_signs.pulse_rate",
+        "mental_emotional_health.stress_level",
+        "lifestyle_factors.diet_type",
+        "lifestyle_factors.addictions",
+        "lifestyle_factors.activity_level",
+        "ayurvedic_constitution.prakriti"
+      ],
+      "exploitation_rules": {
+        "stress_axis": "High stress_level + raised BP = Pitta-Vata aggravation; recommend cooling Pranayama.",
+        "lifestyle_check": "Look for Smoking/Alcohol/Caffeine in addictions list."
+      }
+    },
+    {
+      "id": "MET_001",
+      "primary_term": "Obesity / Weight Gain",
+      "iks_term": "Sthaulya / Medoroga",
+      "category": "Metabolic",
+      "description": "Excessive body fat, sluggish metabolism, heaviness after meals, lethargy, and Kapha dominance. Often associated with low Agni and sedentary lifestyle.",
+      "synonyms": [
+        "I am gaining weight",
+        "obesity",
+        "overweight",
+        "heaviness after eating",
+        "feeling bloated and heavy",
+        "slow metabolism",
+        "can't lose weight",
+        "feeling sluggish",
+        "BMI is high"
+      ],
+      "relevant_attribute_paths": [
+        "vital_signs.bmi",
+        "digestive_system.agni_state",
+        "digestive_system.specific_symptoms",
+        "lifestyle_factors.diet_type",
+        "lifestyle_factors.activity_level",
+        "ayurvedic_constitution.prakriti",
+        "ayurvedic_constitution.vikriti"
+      ],
+      "exploitation_rules": {
+        "kapha_dominance": "Low activity + Manda Agni + heaviness = classic Medoroga; emphasize Langhana and movement."
+      }
+    },
+    {
+      "id": "DERM_002",
+      "primary_term": "Hair Fall",
+      "iks_term": "Khalitya",
+      "category": "Dermatology",
+      "description": "Excessive shedding of hair, thinning, premature greying, or dandruff — may stem from Pitta excess, stress, poor nutrition, or scalp dryness.",
+      "synonyms": [
+        "hair fall",
+        "losing a lot of hair",
+        "hair thinning",
+        "bald patches",
+        "premature greying",
+        "dandruff",
+        "scalp itches",
+        "dry hair",
+        "hair breaks easily"
+      ],
+      "relevant_attribute_paths": [
+        "skin_and_hair.hair_health",
+        "skin_and_hair.skin_type",
+        "mental_emotional_health.stress_level",
+        "lifestyle_factors.diet_type",
+        "ayurvedic_constitution.vikriti"
+      ],
+      "exploitation_rules": {
+        "pitta_link": "Premature greying + scalp burning = Pitta in Kesha; recommend cooling oils.",
+        "stress_link": "Sudden hair fall is frequently stress-driven — verify stress_level."
+      }
+    },
+    {
+      "id": "GEN_001",
+      "primary_term": "Chronic Fatigue",
+      "iks_term": "Klama / Bala Kshaya",
+      "category": "General",
+      "description": "Persistent tiredness, low energy, lack of motivation, weakness, or feeling drained even after rest — often a sign of Ojas depletion.",
+      "synonyms": [
+        "I am always tired",
+        "low energy",
+        "fatigue",
+        "exhausted all the time",
+        "feeling weak",
+        "no stamina",
+        "drained even after sleeping",
+        "lethargic",
+        "lack of motivation"
+      ],
+      "relevant_attribute_paths": [
+        "ayurvedic_constitution.bala",
+        "ayurvedic_constitution.gunas",
+        "mental_emotional_health.stress_level",
+        "mental_emotional_health.sleep_quality",
+        "lifestyle_factors.activity_level",
+        "lifestyle_factors.diet_type",
+        "digestive_system.agni_state"
+      ],
+      "exploitation_rules": {
+        "ojas_depletion": "Low bala + poor sleep + low Agni = classic Bala Kshaya; recommend Rasayana therapy."
+      }
+    },
+    {
+      "id": "GIT_003",
+      "primary_term": "Gastritis",
+      "iks_term": "Urdhwaga Amlapitta",
+      "category": "Digestive System",
+      "description": "Inflammation of the stomach lining causing burning pain in the upper abdomen, nausea, bloating, loss of appetite, and discomfort that worsens with spicy or sour food.",
+      "synonyms": [
+        "gastritis",
+        "stomach lining is inflamed",
+        "stomach pain after eating",
+        "burning sensation in my stomach",
+        "gnawing pain in upper abdomen",
+        "stomach feels raw",
+        "chronic stomach problems",
+        "feel nauseous after meals",
+        "stomach feels acidic",
+        "pain that goes away after eating but comes back",
+        "atrophic gastritis",
+        "erosive gastritis"
+      ],
+      "relevant_attribute_paths": [
+        "digestive_system.specific_symptoms",
+        "digestive_system.agni_state",
+        "digestive_system.appetite",
+        "lifestyle_factors.diet_type",
+        "lifestyle_factors.addictions",
+        "mental_emotional_health.stress_level",
+        "ayurvedic_constitution.vikriti"
+      ],
+      "exploitation_rules": {
+        "stress_link": "High stress + skipped meals = Pitta aggravation in Amashaya (stomach).",
+        "addictions_check": "Smoking, alcohol, and caffeine consistently worsen gastritis.",
+        "h_pylori_flag": "Recurring symptoms despite lifestyle correction warrant testing for H. pylori."
+      }
+    },
+    {
+      "id": "GIT_004",
+      "primary_term": "Gastroenteritis",
+      "iks_term": "Visuchika / Ajirna",
+      "category": "Digestive System",
+      "description": "Acute inflammation of the stomach and intestines causing diarrhea, vomiting, abdominal cramps, and weakness — typically triggered by contaminated food, cold exposure, or viral infection.",
+      "synonyms": [
+        "stomach flu",
+        "stomach cold",
+        "gastroenteritis",
+        "diarrhea and vomiting together",
+        "stomach bug",
+        "ate something bad and now stomach hurts",
+        "loose motions with cramps",
+        "food poisoning",
+        "vomiting and bloating after meals"
+      ],
+      "relevant_attribute_paths": [
+        "digestive_system.bowel_movements",
+        "digestive_system.specific_symptoms",
+        "digestive_system.agni_state",
+        "vital_signs.body_temperature",
+        "lifestyle_factors.diet_type",
+        "lifestyle_factors.exposure",
+        "ayurvedic_constitution.vikriti"
+      ],
+      "exploitation_rules": {
+        "ama_dominant": "Acute onset after meals = Ama Visha (food toxin); start with rest and clear fluids.",
+        "red_flag": "Persistent vomiting, bloody stool, or fever > 39°C requires medical care."
+      }
+    },
+    {
+      "id": "GIT_005",
+      "primary_term": "Hemorrhoids",
+      "iks_term": "Arsha",
+      "category": "Digestive System",
+      "description": "Swollen veins around the anus causing pain, itching, bleeding (bright red blood on tissue or stool), and a tearing sensation during defecation. Often linked to chronic constipation, prolonged sitting, or low-fiber diet.",
+      "synonyms": [
+        "hemorrhoids",
+        "piles",
+        "blood on the toilet paper",
+        "bleeding while passing stool",
+        "tearing sensation when I defecate",
+        "anus pain after bowel movement",
+        "itchy pain in the anal area",
+        "lump near the anus",
+        "anal fissure",
+        "blood in stool but bright red"
+      ],
+      "relevant_attribute_paths": [
+        "digestive_system.bowel_movements",
+        "digestive_system.specific_symptoms",
+        "lifestyle_factors.diet_type",
+        "lifestyle_factors.activity_level",
+        "musculoskeletal_system.inflammation",
+        "ayurvedic_constitution.vikriti"
+      ],
+      "exploitation_rules": {
+        "constipation_link": "Chronic constipation is the leading cause; address bowel regularity first.",
+        "surgical_referral": "Severe pain, large prolapse, or persistent heavy bleeding → consult for Kshara Sutra or surgical evaluation."
+      }
+    },
+    {
+      "id": "GIT_006",
+      "primary_term": "Peptic Ulcer",
+      "iks_term": "Parinama Shoola",
+      "category": "Digestive System",
+      "description": "Open sores in the stomach lining or upper small intestine causing burning pain (often relieved temporarily by eating but returning hours later), nausea, bloating, and sometimes black stools.",
+      "synonyms": [
+        "peptic ulcer",
+        "gastric ulcer",
+        "duodenal ulcer",
+        "stomach ulcer",
+        "burning pain that wakes me at night",
+        "stomach pain relieved after eating but returns",
+        "stomach hurts on empty stomach",
+        "pain in upper abdomen with nausea",
+        "black tarry stools"
+      ],
+      "relevant_attribute_paths": [
+        "digestive_system.specific_symptoms",
+        "digestive_system.agni_state",
+        "lifestyle_factors.diet_type",
+        "lifestyle_factors.addictions",
+        "mental_emotional_health.stress_level",
+        "ayurvedic_constitution.vikriti"
+      ],
+      "exploitation_rules": {
+        "pitta_dominance": "Burning pain + waking at night = Pitta-dominant Parinama Shoola.",
+        "medical_referral": "Black/tarry stools or vomiting blood requires immediate medical attention."
+      }
+    },
+    {
+      "id": "GIT_007",
+      "primary_term": "Irritable Bowel Syndrome",
+      "iks_term": "Grahani Roga",
+      "category": "Digestive System",
+      "description": "Functional bowel disorder with alternating constipation and diarrhea, abdominal cramps, bloating, and flatulence — often stress-aggravated and worsened by specific trigger foods.",
+      "synonyms": [
+        "IBS",
+        "irritable bowel",
+        "alternating constipation and diarrhea",
+        "stomach hurts before bowel movement and feels better after",
+        "unpredictable bowel habits",
+        "loose stool sometimes hard sometimes",
+        "bowels feel disturbed by stress",
+        "frequent urge to defecate",
+        "abdominal cramps with gas"
+      ],
+      "relevant_attribute_paths": [
+        "digestive_system.bowel_movements",
+        "digestive_system.specific_symptoms",
+        "digestive_system.agni_state",
+        "mental_emotional_health.stress_level",
+        "lifestyle_factors.diet_type",
+        "ayurvedic_constitution.prakriti",
+        "ayurvedic_constitution.vikriti"
+      ],
+      "exploitation_rules": {
+        "vata_pitta_grahani": "Alternating bowel pattern with stress sensitivity = Vata-Pitta Grahani.",
+        "trigger_identification": "Maintain a food diary to identify personal triggers."
+      }
+    },
+    {
+      "id": "GIT_008",
+      "primary_term": "Diarrhea",
+      "iks_term": "Atisara",
+      "category": "Digestive System",
+      "description": "Frequent loose or watery stools, urgency, abdominal cramps, and dehydration risk — caused by infection, contaminated food, or Ama (digestive toxins).",
+      "synonyms": [
+        "diarrhea",
+        "loose stools",
+        "watery motions",
+        "passing stool many times a day",
+        "loose motions",
+        "stool is unformed",
+        "urgent need to use the toilet",
+        "running stomach",
+        "loose stool right after eating"
+      ],
+      "relevant_attribute_paths": [
+        "digestive_system.bowel_movements",
+        "digestive_system.agni_state",
+        "digestive_system.specific_symptoms",
+        "vital_signs.body_temperature",
+        "lifestyle_factors.diet_type",
+        "ayurvedic_constitution.vikriti"
+      ],
+      "exploitation_rules": {
+        "hydration_priority": "Always restore fluids and electrolytes first; weakness = Ojas Kshaya risk.",
+        "medical_referral": "Blood in stool, high fever, or diarrhea > 48 hours requires medical care."
+      }
+    },
+    {
+      "id": "GIT_009",
+      "primary_term": "Indigestion and Bloating",
+      "iks_term": "Ajirna / Adhmana",
+      "category": "Digestive System",
+      "description": "Discomfort, fullness, gas, belching, or heaviness after meals — caused by weak digestion (Manda Agni), incompatible food combinations, or eating in stressed states.",
+      "synonyms": [
+        "indigestion",
+        "feeling bloated after eating",
+        "stomach feels heavy after meals",
+        "bloated stomach",
+        "passing too much gas",
+        "belching a lot",
+        "burping after meals",
+        "stomach feels full and uncomfortable",
+        "haven't digested my food properly",
+        "stomach makes gurgling sounds"
+      ],
+      "relevant_attribute_paths": [
+        "digestive_system.agni_state",
+        "digestive_system.specific_symptoms",
+        "digestive_system.appetite",
+        "lifestyle_factors.diet_type",
+        "lifestyle_factors.activity_level",
+        "ayurvedic_constitution.vikriti"
+      ],
+      "exploitation_rules": {
+        "manda_agni": "Heaviness + low appetite + bloating = Manda Agni; recommend Deepana-Pachana herbs.",
+        "incompatibility_check": "Look for Viruddha Ahara (e.g. milk + fruit, fish + dairy)."
+      }
+    },
+    {
+      "id": "GIT_010",
+      "primary_term": "Nausea and Vomiting",
+      "iks_term": "Chhardi",
+      "category": "Digestive System",
+      "description": "Feeling of queasiness or actual vomiting — may be triggered by spoiled food, anxiety, motion, hormonal changes, or upward movement of Pitta/Kapha.",
+      "synonyms": [
+        "nausea",
+        "feeling queasy",
+        "wanting to vomit",
+        "throwing up",
+        "vomiting after meals",
+        "morning sickness",
+        "stomach feels uneasy and pukish",
+        "feeling dizzy and nauseous",
+        "everything makes me want to retch"
+      ],
+      "relevant_attribute_paths": [
+        "digestive_system.agni_state",
+        "digestive_system.specific_symptoms",
+        "vital_signs.body_temperature",
+        "vital_signs.blood_pressure",
+        "mental_emotional_health.stress_level",
+        "ayurvedic_constitution.vikriti"
+      ],
+      "exploitation_rules": {
+        "pitta_chhardi": "Bitter/sour vomit with burning = Pitta Chhardi; cooling herbs recommended.",
+        "red_flag": "Vomiting blood, severe headache, or persistent vomiting > 24 hours requires medical care."
+      }
+    },
+    {
+      "id": "RES_002",
+      "primary_term": "Common Cold and Flu",
+      "iks_term": "Pratishyaya / Vata-Kaphaja Jwara",
+      "category": "Respiratory",
+      "description": "Acute upper respiratory infection with runny nose, sneezing, sore throat, body aches, mild fever, and fatigue — caused by exposure to cold, dampness, or viruses.",
+      "synonyms": [
+        "I have a cold",
+        "common cold",
+        "flu",
+        "runny nose",
+        "blocked nose",
+        "sneezing a lot",
+        "sore throat with body ache",
+        "feeling feverish and weak",
+        "stuffy head",
+        "caught a chill",
+        "fever with chills and body pain"
+      ],
+      "relevant_attribute_paths": [
+        "respiratory_system.specific_symptoms",
+        "respiratory_system.breathing_pattern",
+        "respiratory_system.cough_characteristics",
+        "vital_signs.body_temperature",
+        "ayurvedic_constitution.bala",
+        "lifestyle_factors.exposure"
+      ],
+      "exploitation_rules": {
+        "kapha_dominant": "Thick mucus + heaviness = Kapha-dominant Pratishyaya; warming spices recommended.",
+        "vata_dominant": "Dry throat + body ache + chills = Vata-dominant; oleation and warmth recommended."
+      }
+    }
+  ]
+}

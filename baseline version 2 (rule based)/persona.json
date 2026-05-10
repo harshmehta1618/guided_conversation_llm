@@ -1,0 +1,20 @@
+{
+    "Age": -1,
+    "Weight": -1,
+    "Average_Sleeping_Hours": -1,
+    "Has_Diabetes": -1,
+    "Has_High_Blood_Pressure": -1,
+    "Daily_Exercise": -1,
+    "Medications": [],
+    "Has_Asthma": -1,
+    "Has_Pneumonia_History": -1,
+    "Has_Shoulder_Injury": -1,
+    "Has_Tremors": -1,
+    "Has_Mouth_Sores": -1,
+    "Has_Nausea_Vomiting": -1,
+    "Has_Stomach_Pain": -1,
+    "Cough_With_Phlegm": -1,
+    "White_Coat_Hypertension": -1,
+    "Degenerative_Changes": -1,
+    "Wears_Dentures": -1
+}

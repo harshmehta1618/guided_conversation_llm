@@ -1,0 +1,547 @@
+{
+  "task_db_version": "2.0",
+  "description": "Actionable task database. 'tasks_by_category' indexes tasks per attribute (used by attribute-driven reasoning). 'tasks_by_problem' indexes tasks per detected problem ID (used after Phase 0 semantic search to focus the recommender on relevant remedies).",
+  "tasks_by_category": {
+    "ayurvedic_constitution": {
+      "prakriti": {
+        "task_list": [
+          "Take the detailed Prakriti assessment questionnaire",
+          "Consult an Ayurvedic Vaidya for pulse diagnosis (Nadi Pariksha)",
+          "Maintain a food diary for 3 days to correlate with doshic reactions"
+        ]
+      },
+      "vikriti": {
+        "task_list": [
+          "Track daily energy levels and mood swings",
+          "Identify recent dietary changes causing discomfort",
+          "Monitor reaction to hot vs. cold foods"
+        ]
+      },
+      "gunas": {
+        "task_list": [
+          "Practice 10 minutes of Trataka (candle gazing) to balance Rajas",
+          "Engage in community service (Seva) to reduce Tamas",
+          "Listen to Sattvic classical music or chants before sleep"
+        ]
+      },
+      "bala": {
+        "task_list": [
+          "Consume a teaspoon of Chyawanprash daily (if digestion allows)",
+          "Practice daily self-massage (Abhyanga) with sesame oil",
+          "Perform 5 rounds of Suryanamaskar to build stamina"
+        ]
+      }
+    },
+    "vital_signs": {
+      "blood_pressure": {
+        "task_list": [
+          "Practice Shavasana (Corpse Pose) for 15 minutes daily",
+          "Reduce salt intake and avoid processed snacks",
+          "Perform Chandrabhedi Pranayama (Left Nostril Breathing) for cooling",
+          "Monitor BP twice daily at the same time"
+        ]
+      },
+      "pulse_rate": {
+        "task_list": [
+          "Practice deep diaphragmatic breathing for 5 minutes",
+          "Avoid caffeine after 2 PM",
+          "Track resting heart rate immediately upon waking up"
+        ]
+      },
+      "nadi_character": {
+        "task_list": [
+          "Observe pulse quality after meals vs. empty stomach",
+          "Hydrate with warm water if pulse feels dry/thready (Vata)",
+          "Practice cooling breath (Sheetali) if pulse feels jumping/strong (Pitta)"
+        ]
+      },
+      "body_temperature": {
+        "task_list": [
+          "Drink coriander seed water to reduce internal heat",
+          "Apply sandalwood paste to the forehead",
+          "Monitor temperature every 4 hours if feeling feverish"
+        ]
+      },
+      "bmi": {
+        "task_list": [
+          "Walk 10,000 steps daily",
+          "Intermittent fasting (12-hour window) to regulate metabolism",
+          "Replace dinner with a light soup or khichdi",
+          "Strength training 3 times a week"
+        ]
+      }
+    },
+    "digestive_system": {
+      "agni_state": {
+        "task_list": [
+          "Chew a slice of fresh ginger with rock salt before meals",
+          "Sip warm water throughout the day (avoid ice water)",
+          "Eat only when strongly hungry",
+          "Fast on liquids for one day (Langhana) if Agni is low"
+        ]
+      },
+      "bowel_movements": {
+        "task_list": [
+          "Drink a glass of warm water with lemon immediately upon waking",
+          "Consume soaked raisins or Triphala powder before bed",
+          "Squat while defecating (or use a stool) to aid elimination",
+          "Increase fiber intake with cooked leafy greens"
+        ]
+      },
+      "appetite": {
+        "task_list": [
+          "Stick to strict meal timings (e.g., 8am, 1pm, 7pm)",
+          "Avoid snacking between meals",
+          "Practice Vajrasana (Thunderbolt Pose) after meals"
+        ]
+      },
+      "specific_symptoms": {
+        "task_list": [
+          "Drink Jeera (Cumin) water for bloating/gas",
+          "Avoid spicy and sour foods for acidity",
+          "Walk for 100 steps (Shatapavali) after dinner",
+          "Drink buttermilk with roasted cumin after lunch"
+        ]
+      }
+    },
+    "respiratory_system": {
+      "breathing_pattern": {
+        "task_list": [
+          "Practice Anulom Vilom (Alternate Nostril Breathing) for 10 mins",
+          "Perform steam inhalation with eucalyptus oil",
+          "Sing or hum (Bhramari) to improve lung capacity"
+        ]
+      },
+      "cough_characteristics": {
+        "task_list": [
+          "Gargle with warm turmeric and salt water",
+          "Chew on a clove or licorice stick (Mulethi)",
+          "Avoid dairy products (milk, yogurt) at night",
+          "Keep the throat covered/warm"
+        ]
+      },
+      "sputum_type": {
+        "task_list": [
+          "Drink Tulsi and Black Pepper tea",
+          "Perform Kapalbhati pranayama (if no high BP)",
+          "Use a neti pot for nasal cleansing (Jala Neti)"
+        ]
+      },
+      "specific_symptoms": {
+        "task_list": [
+          "Apply warm mustard oil to the chest",
+          "Drink Golden Milk (Turmeric Milk) before bed",
+          "Elevate head while sleeping to reduce congestion"
+        ]
+      }
+    },
+    "musculoskeletal_system": {
+      "pain_sites": {
+        "task_list": [
+          "Apply warm Mahanarayan oil to the affected joint",
+          "Use a hot water bag compress for 15 minutes",
+          "Perform gentle joint rotations (Sukshma Vyayama)",
+          "Avoid direct fan/AC draft on the painful area"
+        ]
+      },
+      "pain_quality": {
+        "task_list": [
+          "Rest the affected area (avoid strain)",
+          "Apply Lepam (herbal paste) of ginger and turmeric",
+          "Soak in a warm Epsom salt bath"
+        ]
+      },
+      "stiffness": {
+        "task_list": [
+          "Perform sun salutations (Suryanamaskar) slowly",
+          "Drink warm water with a pinch of dry ginger powder",
+          "Avoid curds and fermented foods"
+        ]
+      },
+      "inflammation": {
+        "task_list": [
+          "Apply a paste of sandalwood and turmeric",
+          "Elevate the swollen limb",
+          "Consume anti-inflammatory tea (Ginger-Turmeric)"
+        ]
+      },
+      "crepitus": {
+        "task_list": [
+          "Regular oil massage (Snehana) of the joints",
+          "Consume healthy fats like Ghee or Sesame seeds",
+          "Avoid dry and crunchy foods (crackers, chips)"
+        ]
+      }
+    },
+    "mental_emotional_health": {
+      "stress_level": {
+        "task_list": [
+          "Practice Yoga Nidra (Guided Relaxation) for 20 mins",
+          "Disconnect from screens 1 hour before bed",
+          "Massage the soles of the feet with Ghee before sleep (Padabhyanga)",
+          "Write a gratitude journal"
+        ]
+      },
+      "sleep_quality": {
+        "task_list": [
+          "Stick to a consistent sleep schedule (bed by 10 PM)",
+          "Drink warm nutmeg milk before bed",
+          "Keep the bedroom dark and cool",
+          "Practice box breathing (4-4-4-4) in bed"
+        ]
+      },
+      "emotional_dominance": {
+        "task_list": [
+          "Practice grounding exercises (walking barefoot on grass)",
+          "Vent emotions through writing or talking to a friend",
+          "Drink rose petal tea for cooling anger (Pitta)",
+          "Practice meditation focusing on the heart center"
+        ]
+      },
+      "cognitive_function": {
+        "task_list": [
+          "Solve a puzzle or learn a new skill daily",
+          "Consume 5 soaked almonds daily",
+          "Practice mindfulness meditation",
+          "Perform Bhramari Pranayama (Humming Bee Breath)"
+        ]
+      }
+    },
+    "lifestyle_factors": {
+      "diet_type": {
+        "task_list": [
+          "Incorporate all 6 tastes (Sweet, Sour, Salty, Bitter, Pungent, Astringent) in lunch",
+          "Cook fresh meals daily (avoid leftovers)",
+          "Eat in a calm environment without distractions"
+        ]
+      },
+      "activity_level": {
+        "task_list": [
+          "Take a 5-minute movement break every hour of sitting",
+          "Park further away to increase walking distance",
+          "Take the stairs instead of the elevator"
+        ]
+      },
+      "addictions": {
+        "task_list": [
+          "Replace the habit with a breathing break",
+          "Drink water whenever the craving strikes",
+          "Chew on fennel seeds instead of smoking/tobacco"
+        ]
+      },
+      "exposure": {
+        "task_list": [
+          "Get 15 minutes of early morning sunlight",
+          "Wear a mask in high pollution areas",
+          "Use an air purifier or indoor plants",
+          "Splash cold water on eyes after screen use"
+        ]
+      }
+    },
+    "skin_and_hair": {
+      "skin_type": {
+        "task_list": [
+          "Hydrate with 8 glasses of water daily",
+          "Apply aloe vera gel for soothing",
+          "Use a gentle herbal cleanser (besan/gram flour)"
+        ]
+      },
+      "hair_health": {
+        "task_list": [
+          "Massage scalp with warm coconut or bhringraj oil twice a week",
+          "Avoid hot water on the head while showering",
+          "Eat foods rich in Iron and Vitamin C (Amla, Curry leaves)"
+        ]
+      },
+      "specific_issues": {
+        "task_list": [
+          "Apply neem paste to acne/rashes",
+          "Avoid touching the face",
+          "Change pillowcases weekly",
+          "Consume blood-purifying herbs like Manjistha (consult Vaidya)"
+        ]
+      }
+    }
+  },
+  "tasks_by_problem": {
+    "MSK_001": {
+      "primary_term": "Joint Pain",
+      "iks_term": "Sandhivata / Amavata",
+      "task_list": [
+        "Apply warm Mahanarayan oil to the affected joint and massage gently",
+        "Use a hot water bag compress for 15 minutes twice a day",
+        "Perform gentle joint rotations (Sukshma Vyayama) every morning",
+        "Avoid direct fan/AC draft on the painful area",
+        "Drink warm water with a pinch of dry ginger powder before meals",
+        "Avoid curds, fermented foods, and cold drinks",
+        "Consume anti-inflammatory ginger-turmeric tea twice daily"
+      ]
+    },
+    "GIT_001": {
+      "primary_term": "Hyperacidity",
+      "iks_term": "Amlapitta",
+      "task_list": [
+        "Avoid spicy, sour, and fried foods completely",
+        "Drink buttermilk with roasted cumin after lunch",
+        "Sip Jeera (cumin) water through the day",
+        "Walk for 100 steps (Shatapavali) after every meal",
+        "Eat dinner before sunset and keep it light",
+        "Practice Sheetali Pranayama (cooling breath) for 5 minutes",
+        "Avoid skipping meals — eat at fixed times"
+      ]
+    },
+    "RES_001": {
+      "primary_term": "Chronic Cough",
+      "iks_term": "Kasa",
+      "task_list": [
+        "Gargle with warm turmeric and salt water 2-3 times a day",
+        "Chew on a clove or licorice (Mulethi) stick to soothe the throat",
+        "Drink Tulsi and black pepper tea twice a day",
+        "Perform steam inhalation with eucalyptus oil",
+        "Avoid dairy products (milk, yogurt) at night",
+        "Drink warm Golden Milk (turmeric milk) before bed",
+        "Keep the throat covered and avoid cold air"
+      ]
+    },
+    "PSY_001": {
+      "primary_term": "Anxiety",
+      "iks_term": "Chittodvega",
+      "task_list": [
+        "Practice Yoga Nidra (guided relaxation) for 20 minutes daily",
+        "Disconnect from screens 1 hour before bed",
+        "Massage the soles of the feet with ghee before sleep (Padabhyanga)",
+        "Practice Anulom Vilom (alternate nostril breathing) for 10 minutes",
+        "Walk barefoot on grass for 10 minutes (grounding)",
+        "Write a gratitude journal each night",
+        "Drink warm milk with a pinch of nutmeg before bed"
+      ]
+    },
+    "DERM_001": {
+      "primary_term": "Skin Rashes",
+      "iks_term": "Kushtha / Visarpa",
+      "task_list": [
+        "Apply aloe vera gel to the affected area for cooling",
+        "Apply neem paste to acne/rashes",
+        "Avoid incompatible foods (Viruddha Ahara) — e.g. milk with fish/sour fruits",
+        "Use a gentle herbal cleanser (besan/gram flour) instead of soap",
+        "Drink coriander seed water to reduce internal heat",
+        "Consume blood-purifying herbs like Manjistha (consult a Vaidya)",
+        "Avoid touching the face and change pillowcases weekly"
+      ]
+    },
+    "PSY_002": {
+      "primary_term": "Insomnia",
+      "iks_term": "Anidra",
+      "task_list": [
+        "Stick to a consistent sleep schedule (in bed by 10 PM)",
+        "Drink warm nutmeg milk 30 minutes before bed",
+        "Keep the bedroom dark, cool, and free of screens",
+        "Practice box breathing (4-4-4-4) while lying in bed",
+        "Massage the soles of the feet with ghee or warm sesame oil (Padabhyanga)",
+        "Avoid caffeine after 2 PM and heavy dinners",
+        "Practice 10 minutes of Yoga Nidra before sleep"
+      ]
+    },
+    "GIT_002": {
+      "primary_term": "Constipation",
+      "iks_term": "Vibandha",
+      "task_list": [
+        "Drink a glass of warm water with lemon immediately upon waking",
+        "Consume 1 teaspoon of Triphala powder with warm water before bed",
+        "Soak 8-10 raisins overnight and chew them in the morning",
+        "Squat (or use a stool) while defecating to ease elimination",
+        "Increase fiber by eating cooked leafy greens daily",
+        "Walk 30 minutes after dinner",
+        "Add a teaspoon of ghee to warm milk at night"
+      ]
+    },
+    "NEU_001": {
+      "primary_term": "Headache",
+      "iks_term": "Shirashoola",
+      "task_list": [
+        "Apply sandalwood paste to the forehead for cooling",
+        "Drink coriander seed water to reduce internal heat",
+        "Practice Anulom Vilom for 10 minutes morning and evening",
+        "Take a 20-minute screen break every hour",
+        "Stay well-hydrated — at least 8 glasses of water a day",
+        "Apply warm sesame oil to the scalp (Shiro Abhyanga) twice a week",
+        "Avoid skipping meals — keep blood sugar steady"
+      ]
+    },
+    "CVS_001": {
+      "primary_term": "Hypertension",
+      "iks_term": "Rakta Gata Vata",
+      "task_list": [
+        "Practice Shavasana (corpse pose) for 15 minutes daily",
+        "Reduce salt intake and avoid processed snacks",
+        "Perform Chandrabhedi Pranayama (left-nostril breathing) for cooling",
+        "Monitor BP twice daily at the same time",
+        "Walk briskly for 30 minutes daily",
+        "Cut down on caffeine, smoking, and alcohol",
+        "Practice meditation focused on the heart center"
+      ]
+    },
+    "MET_001": {
+      "primary_term": "Obesity / Weight Gain",
+      "iks_term": "Sthaulya / Medoroga",
+      "task_list": [
+        "Walk 10,000 steps daily",
+        "Practice intermittent fasting (12-hour eating window)",
+        "Replace dinner with a light soup or khichdi",
+        "Strength training 3 times a week",
+        "Practice Vajrasana (thunderbolt pose) for 5 minutes after meals",
+        "Stick to strict meal timings — avoid snacking between meals",
+        "Drink warm water with honey and lemon on waking"
+      ]
+    },
+    "DERM_002": {
+      "primary_term": "Hair Fall",
+      "iks_term": "Khalitya",
+      "task_list": [
+        "Massage scalp with warm coconut or bhringraj oil twice a week",
+        "Avoid hot water on the head while showering",
+        "Eat foods rich in iron and Vitamin C — Amla, curry leaves, dates",
+        "Consume soaked Amla or Amla juice daily",
+        "Practice Bhramari Pranayama to reduce stress",
+        "Avoid harsh chemical shampoos — use a herbal cleanser",
+        "Get 7-8 hours of sound sleep every night"
+      ]
+    },
+    "GEN_001": {
+      "primary_term": "Chronic Fatigue",
+      "iks_term": "Klama / Bala Kshaya",
+      "task_list": [
+        "Consume a teaspoon of Chyawanprash daily (if digestion allows)",
+        "Practice daily self-massage (Abhyanga) with sesame oil",
+        "Perform 5 rounds of Suryanamaskar to build stamina",
+        "Get 15 minutes of early morning sunlight exposure",
+        "Sleep by 10 PM and wake before sunrise",
+        "Eat warm, freshly cooked, easy-to-digest meals",
+        "Consume 5 soaked almonds daily for Ojas"
+      ]
+    },
+    "GIT_003": {
+      "primary_term": "Gastritis",
+      "iks_term": "Urdhwaga Amlapitta",
+      "task_list": [
+        "Eat small frequent meals (every 3-4 hours) — never skip meals",
+        "Avoid spicy, fried, sour, and fermented foods completely",
+        "Drink Yashtimadhu (licorice) tea twice a day to soothe the stomach lining",
+        "Sip cool coconut water or aloe vera juice on an empty stomach",
+        "Practice Sheetali Pranayama (cooling breath) for 5 minutes",
+        "Quit smoking, alcohol, and caffeine",
+        "Eat in a calm, unhurried environment — chew thoroughly",
+        "If symptoms recur despite lifestyle changes, get tested for H. pylori"
+      ]
+    },
+    "GIT_004": {
+      "primary_term": "Gastroenteritis",
+      "iks_term": "Visuchika / Ajirna",
+      "task_list": [
+        "Rest the gut for 6-8 hours; sip warm rice water or coconut water with a pinch of salt and sugar",
+        "Begin with khichdi or boiled rice with curd once nausea subsides",
+        "Drink ginger-mint tea to settle the stomach",
+        "Avoid dairy, raw foods, oily and spicy foods for 3-4 days",
+        "Take a teaspoon of Triphala with warm water once symptoms ease (digestive cleanse)",
+        "Stay hydrated — aim for 8-10 glasses of warm water through the day",
+        "Seek medical care if vomiting/diarrhea persists > 48 hours, blood appears, or fever rises above 39°C"
+      ]
+    },
+    "GIT_005": {
+      "primary_term": "Hemorrhoids",
+      "iks_term": "Arsha",
+      "task_list": [
+        "Take a sitz bath in warm water for 15 minutes, twice a day",
+        "Apply pure aloe vera gel or cold coconut oil to the affected area",
+        "Increase fiber: cooked leafy greens, soaked figs, soaked raisins, and isabgol (psyllium husk)",
+        "Drink at least 8-10 glasses of water daily to keep stools soft",
+        "Take 1 teaspoon of Triphala powder with warm water at bedtime",
+        "Avoid prolonged sitting; stand and walk every 30 minutes",
+        "Avoid straining — use a footstool to elevate feet while defecating",
+        "If pain is severe or bleeding is heavy, consult a Vaidya for Kshara Sutra or surgical evaluation"
+      ]
+    },
+    "GIT_006": {
+      "primary_term": "Peptic Ulcer",
+      "iks_term": "Parinama Shoola",
+      "task_list": [
+        "Eat small bland meals every 3 hours — never let stomach stay empty for long",
+        "Avoid spicy, sour, fried, fermented foods, citrus, tomatoes, and chocolate",
+        "Drink Yashtimadhu (licorice) milk decoction twice a day",
+        "Stop NSAIDs (aspirin, ibuprofen) unless prescribed",
+        "Quit smoking and alcohol immediately — both delay ulcer healing",
+        "Manage stress with daily Yoga Nidra (20 minutes) and meditation",
+        "Add a teaspoon of pure ghee to warm milk at night to coat the stomach",
+        "Get tested and treated for H. pylori if recurrent — coordinate with a physician for PPIs and antibiotics"
+      ]
+    },
+    "GIT_007": {
+      "primary_term": "Irritable Bowel Syndrome",
+      "iks_term": "Grahani Roga",
+      "task_list": [
+        "Maintain a 2-week food diary to identify personal triggers (often dairy, wheat, beans, raw salads)",
+        "Eat warm, cooked meals at fixed times — avoid cold drinks and raw foods",
+        "Take Hingvashtaka Churna (1/4 tsp) with first bite of meals to kindle Agni",
+        "Drink a tea of fennel + cumin + coriander seeds (CCF tea) after meals",
+        "Practice Pawanmuktasana and other abdominal yoga poses daily",
+        "Manage stress with Anulom Vilom Pranayama for 10 minutes daily",
+        "Avoid coffee, alcohol, and artificial sweeteners",
+        "Consume Takra (medicated buttermilk with cumin and ginger) with lunch"
+      ]
+    },
+    "GIT_008": {
+      "primary_term": "Diarrhea",
+      "iks_term": "Atisara",
+      "task_list": [
+        "Restore fluids and electrolytes — sip ORS or coconut water with rock salt every 15 minutes",
+        "Eat small portions of boiled rice with curd, banana, or pomegranate juice",
+        "Drink ginger-and-cumin water through the day",
+        "Take Bilva fruit pulp or Kutaja bark decoction (classical Atisara remedies)",
+        "Avoid dairy (except curd), raw foods, oily/fried foods, and caffeine",
+        "Rest completely; avoid heavy physical work until normal stool returns",
+        "Consult a doctor immediately if blood appears in stool, fever > 39°C, or symptoms persist beyond 48 hours"
+      ]
+    },
+    "GIT_009": {
+      "primary_term": "Indigestion and Bloating",
+      "iks_term": "Ajirna / Adhmana",
+      "task_list": [
+        "Chew a thin slice of fresh ginger with rock salt and a few drops of lemon before meals",
+        "Sip warm Jeera-Saunf-Ajwain water through the day",
+        "Eat at fixed times — never skip meals or graze constantly",
+        "Walk 100 steps (Shatapavali) immediately after every meal",
+        "Sit in Vajrasana for 5 minutes after meals",
+        "Avoid combining incompatible foods (Viruddha Ahara) — e.g. milk + fruit, fish + dairy",
+        "Skip dinner once a week and have only warm water (Langhana for Agni)",
+        "Take Hingvashtaka Churna or Trikatu before meals if Agni is low"
+      ]
+    },
+    "GIT_010": {
+      "primary_term": "Nausea and Vomiting",
+      "iks_term": "Chhardi",
+      "task_list": [
+        "Sip a warm drink of ginger juice + honey + lemon every 30 minutes",
+        "Suck on a clove or cardamom pod to settle the stomach",
+        "Drink chilled fennel-coriander water for Pitta-type nausea",
+        "Avoid solid food until the urge to vomit subsides; resume with rice gruel",
+        "Rest in a cool, well-ventilated, low-light room",
+        "Practice slow deep breathing (4-second inhale, 6-second exhale)",
+        "Consult a doctor immediately if vomiting blood, severe headache, dehydration, or symptoms last > 24 hours"
+      ]
+    },
+    "RES_002": {
+      "primary_term": "Common Cold and Flu",
+      "iks_term": "Pratishyaya / Vata-Kaphaja Jwara",
+      "task_list": [
+        "Drink Tulsi-ginger-black pepper tea with honey 3 times a day",
+        "Inhale steam with eucalyptus oil twice a day",
+        "Apply warm sesame or mustard oil to the chest, throat, and sinuses",
+        "Gargle with warm salt water 3 times a day",
+        "Eat warm light foods like khichdi, vegetable soup, and moong dal water",
+        "Take 1/4 tsp of Trikatu (ginger + black pepper + long pepper) with honey twice daily",
+        "Sleep early (by 10 PM) and rest adequately — avoid cold air and AC",
+        "Avoid dairy, cold drinks, and refined sugar until recovered"
+      ]
+    }
+  }
+}

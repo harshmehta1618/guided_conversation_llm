@@ -1,0 +1,22 @@
+﻿# Exclude disease_pred folder entirely
+disease_pred/
+
+# Virtual environments
+chatenv/
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment / secrets
+.env
+*.env
+
+# OS junk
+.DS_Store
+Thumbs.db

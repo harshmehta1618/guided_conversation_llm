@@ -1,0 +1,218 @@
+{
+  "user_attribute_schema": {
+    "version": "1.0",
+    "description": "Comprehensive schema of user attributes for IKS-based medical profiling.",
+    "categories": {
+      "ayurvedic_constitution": {
+        "description": "Core bio-energetic profile of the user",
+        "attributes": {
+          "prakriti": {
+            "name": "Body Constitution (Birth)",
+            "type": "categorical",
+            "values": ["Vata", "Pitta", "Kapha", "Vata-Pitta", "Pitta-Kapha", "Vata-Kapha", "Tridoshic"]
+          },
+          "vikriti": {
+            "name": "Current Imbalance",
+            "type": "categorical",
+            "values": ["Vata Imbalance", "Pitta Imbalance", "Kapha Imbalance"],
+            "context": "The specific dosha currently causing issues."
+          },
+          "gunas": {
+            "name": "Mental Constitution",
+            "type": "categorical",
+            "values": ["Sattva (Balanced)", "Rajas (Active/Agitated)", "Tamas (Lethargic)"]
+          },
+          "bala": {
+            "name": "Strength/Immunity",
+            "type": "scale",
+            "range": "1-10",
+            "iks_term": "Ojas"
+          }
+        }
+      },
+      "vital_signs": {
+        "description": "Measurable physiological markers",
+        "attributes": {
+          "blood_pressure": {
+            "name": "Blood Pressure",
+            "type": "numeric_pair",
+            "iks_term": "Rakta Chapa",
+            "flags": ["Hypertension", "Hypotension", "Normal"]
+          },
+          "pulse_rate": {
+            "name": "Pulse / Heart Rate",
+            "type": "numeric",
+            "iks_term": "Nadi Gati"
+          },
+          "nadi_character": {
+            "name": "Pulse Quality",
+            "type": "categorical",
+            "values": ["Sarpa (Snake/Vata)", "Manduka (Frog/Pitta)", "Hamsa (Swan/Kapha)"]
+          },
+          "body_temperature": {
+            "name": "Body Temperature",
+            "type": "numeric",
+            "iks_term": "Ushnata"
+          },
+          "bmi": {
+            "name": "BMI",
+            "type": "numeric",
+            "context": "Calculated from height and weight"
+          }
+        }
+      },
+      "digestive_system": {
+        "description": "Gut health and metabolism (Annavaha Srotas)",
+        "attributes": {
+          "agni_state": {
+            "name": "Digestive Fire",
+            "type": "categorical",
+            "values": ["Sama (Balanced)", "Vishama (Irregular)", "Tikshna (Sharp/High)", "Manda (Slow/Low)"]
+          },
+          "bowel_movements": {
+            "name": "Elimination Pattern",
+            "type": "categorical",
+            "values": ["Regular", "Constipated (Vibandha)", "Loose/Diarrhea (Atisara)", "Sticky/Mucous"]
+          },
+          "appetite": {
+            "name": "Hunger Levels",
+            "type": "scale",
+            "range": "Low to Excessive"
+          },
+          "specific_symptoms": [
+            "Bloating (Adhmana)",
+            "Acidity/Heartburn (Amlapitta)",
+            "Gas/Flatulence",
+            "Heaviness post-meal"
+          ]
+        }
+      },
+      "respiratory_system": {
+        "description": "Breathing and ENT (Pranavaha Srotas)",
+        "attributes": {
+          "breathing_pattern": {
+            "name": "Respiration Quality",
+            "type": "categorical",
+            "values": ["Deep", "Shallow", "Labored (Dyspnea/Shwasa)", "Wheezing"]
+          },
+          "cough_characteristics": {
+            "name": "Cough Type",
+            "type": "categorical",
+            "values": ["Dry (Vata)", "Productive/Phlegm (Kapha)", "With Burning Sensation (Pitta)", "None"]
+          },
+          "sputum_type": {
+            "name": "Mucus Quality",
+            "type": "categorical",
+            "values": ["Thick/White", "Yellow/Green", "Foamy", "None"]
+          },
+          "specific_symptoms": [
+            "Sinus Congestion",
+            "Sore Throat",
+            "Running Nose (Pratishayaya)",
+            "Chest Tightness"
+          ]
+        }
+      },
+      "musculoskeletal_system": {
+        "description": "Muscles, Bones, and Joints (Mamsa/Asthi/Majja)",
+        "attributes": {
+          "pain_sites": {
+            "name": "Pain Location",
+            "type": "list",
+            "options": ["Knee (Janu)", "Lower Back (Kati)", "Neck (Greeva)", "Shoulder", "All Joints"]
+          },
+          "pain_quality": {
+            "name": "Nature of Pain",
+            "type": "categorical",
+            "values": ["Throbbing", "Stabbing", "Dull Ache", "Moving Pain"]
+          },
+          "stiffness": {
+            "name": "Stiffness (Stambha)",
+            "type": "categorical",
+            "values": ["Morning Stiffness", "Constant", "None"]
+          },
+          "inflammation": {
+            "name": "Swelling (Shotha)",
+            "type": "boolean"
+          },
+          "crepitus": {
+            "name": "Joint Cracking Sound",
+            "type": "boolean"
+          }
+        }
+      },
+      "mental_emotional_health": {
+        "description": "Psychological state (Manovaha Srotas)",
+        "attributes": {
+          "stress_level": {
+            "name": "Stress Load",
+            "type": "scale",
+            "range": "1-10",
+            "iks_term": "Chinta"
+          },
+          "sleep_quality": {
+            "name": "Nidra",
+            "type": "categorical",
+            "values": ["Sound Sleep", "Insomnia (Anidra)", "Excessive Sleep", "Interrupted"]
+          },
+          "emotional_dominance": {
+            "name": "Predominant Emotion",
+            "type": "list",
+            "values": ["Anxiety (Chitta Udvega)", "Anger (Krodha)", "Grief (Shoka)", "Fear (Bhaya)", "Calm"]
+          },
+          "cognitive_function": {
+            "name": "Focus & Memory",
+            "type": "categorical",
+            "values": ["Sharp", "Foggy/Confused", "Forgetful"]
+          }
+        }
+      },
+      "lifestyle_factors": {
+        "description": "Daily habits (Vihara)",
+        "attributes": {
+          "diet_type": {
+            "name": "Ahara",
+            "type": "categorical",
+            "values": ["Vegetarian", "Non-Vegetarian", "Vegan", "Satvik"]
+          },
+          "activity_level": {
+            "name": "Vyayama",
+            "type": "categorical",
+            "values": ["Sedentary", "Moderate", "Athletic/Heavy"]
+          },
+          "addictions": {
+            "name": "Habits",
+            "type": "list",
+            "values": ["Smoking", "Alcohol", "Caffeine", "None"]
+          },
+          "exposure": {
+            "name": "Environmental Factors",
+            "type": "list",
+            "values": ["AC Environment", "Sun Exposure", "Dust/Pollution"]
+          }
+        }
+      },
+      "skin_and_hair": {
+        "description": "External tissue health",
+        "attributes": {
+          "skin_type": {
+            "name": "Skin Texture",
+            "type": "categorical",
+            "values": ["Dry/Rough (Vata)", "Sensitive/Red (Pitta)", "Oily/Soft (Kapha)"]
+          },
+          "hair_health": {
+            "name": "Kesha",
+            "type": "list",
+            "values": ["Hair Fall", "Greying", "Dandruff", "Healthy"]
+          },
+          "specific_issues": [
+            "Itching (Kandu)",
+            "Rashes",
+            "Acne",
+            "Discoloration"
+          ]
+        }
+      }
+    }
+  }
+}

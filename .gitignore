@@ -1,7 +1,4 @@
-﻿# Exclude disease_pred folder entirely
-disease_pred/
-
-# Virtual environments
+﻿# Virtual environments
 chatenv/
 .venv/
 venv/
